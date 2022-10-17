@@ -17,26 +17,26 @@ SELECT hashint1(55::int1);
  -305105437
 (1 row)
 
-SELECT hashuint1(55::uint1);
- hashuint1  
+SELECT hashu8(55::u8);
+ hashu8  
 ------------
  -305105437
 (1 row)
 
-SELECT hashuint2(55::uint2);
- hashuint2  
+SELECT hashu16(55::u16);
+ hashu16  
 ------------
  -305105437
 (1 row)
 
-SELECT hashuint4(55::uint4);
- hashuint4  
+SELECT hashu32(55::u32);
+ hashu32  
 ------------
  -305105437
 (1 row)
 
-SELECT hashuint8(55::uint8);
- hashuint8  
+SELECT hashu64(55::u64);
+ hashu64  
 ------------
  -305105437
 (1 row)

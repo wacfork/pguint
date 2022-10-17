@@ -22,13 +22,13 @@ SELECT to_hex(-95::int8);
  ffffffffffffffa1
 (1 row)
 
-SELECT to_hex(95::uint4);
+SELECT to_hex(95::u32);
  to_hex 
 --------
  5f
 (1 row)
 
-SELECT to_hex(95::uint8);
+SELECT to_hex(95::u64);
  to_hex 
 --------
  5f

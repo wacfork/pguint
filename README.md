@@ -4,10 +4,10 @@ Unsigned and other extra integer types for PostgreSQL
 This extension provides additional integer types for PostgreSQL:
 
 - `int1` (signed 8-bit integer)
-- `uint1` (unsigned 8-bit integer)
-- `uint2` (unsigned 16-bit integer)
-- `uint4` (unsigned 32-bit integer)
-- `uint8` (unsigned 64-bit integer)
+- `u8` (unsigned 8-bit integer)
+- `u16` (unsigned 16-bit integer)
+- `u32` (unsigned 32-bit integer)
+- `u64` (unsigned 64-bit integer)
 
 Installation
 ------------
@@ -36,7 +36,7 @@ You can use the new types like the standard integer types.  Examples:
 
 ```sql
 CREATE TABLE foo (
-    a uint4,
+    a u32,
     b text
 );
 

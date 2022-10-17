@@ -34,5 +34,5 @@ to_hex_##type(PG_FUNCTION_ARGS) \
 } \
 extern int no_such_variable
 
-make_to_hex(uint4, UINT32);
-make_to_hex(uint8, UINT64);
+make_to_hex(u32, UINT32);
+make_to_hex(u64, UINT64);

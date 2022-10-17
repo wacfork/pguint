@@ -14,13 +14,13 @@ hash##type(PG_FUNCTION_ARGS) \
 extern int no_such_variable
 
 make_hashfunc(int1, INT8, int32);
-make_hashfunc(uint1, UINT8, uint32);
-make_hashfunc(uint2, UINT16, uint32);
-make_hashfunc(uint4, UINT32, uint32);
+make_hashfunc(u8, UINT8, uint32);
+make_hashfunc(u16, UINT16, uint32);
+make_hashfunc(u32, UINT32, uint32);
 
-PG_FUNCTION_INFO_V1(hashuint8);
+PG_FUNCTION_INFO_V1(hashu64);
 Datum
-hashuint8(PG_FUNCTION_ARGS)
+hashu64(PG_FUNCTION_ARGS)
 {
 	/* see also hashint8 */
 	uint64		val = PG_GETARG_UINT64(0);

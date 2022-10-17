@@ -44,185 +44,191 @@ CREATE CAST (int1 AS numeric) WITH INOUT AS IMPLICIT;
 CREATE CAST (int1 AS real) WITH INOUT AS IMPLICIT;
 
 
-CREATE TYPE uint1;
+CREATE TYPE u8;
 
-CREATE FUNCTION uint1in(cstring) RETURNS uint1
+CREATE FUNCTION u8in(cstring) RETURNS u8
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint1in';
+    AS '$libdir/uint', 'u8in';
 
-CREATE FUNCTION uint1out(uint1) RETURNS cstring
+CREATE FUNCTION u8out(u8) RETURNS cstring
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint1out';
+    AS '$libdir/uint', 'u8out';
 
-CREATE FUNCTION uint1recv(internal) RETURNS uint1
+CREATE FUNCTION u8recv(internal) RETURNS u8
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint1recv';
+    AS '$libdir/uint', 'u8recv';
 
-CREATE FUNCTION uint1send(uint1) RETURNS bytea
+CREATE FUNCTION u8send(u8) RETURNS bytea
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint1send';
+    AS '$libdir/uint', 'u8send';
 
-CREATE TYPE uint1 (
-    INPUT = uint1in,
-    OUTPUT = uint1out,
-    RECEIVE = uint1recv,
-    SEND = uint1send,
+CREATE TYPE u8 (
+    INPUT = u8in,
+    OUTPUT = u8out,
+    RECEIVE = u8recv,
+    SEND = u8send,
     INTERNALLENGTH = 1,
     PASSEDBYVALUE,
     ALIGNMENT = char
 );
 
-CREATE CAST (double precision AS uint1) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (numeric AS uint1) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (real AS uint1) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (double precision AS u8) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (numeric AS u8) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (real AS u8) WITH INOUT AS ASSIGNMENT;
 
-CREATE CAST (uint1 AS double precision) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint1 AS numeric) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint1 AS real) WITH INOUT AS IMPLICIT;
+CREATE CAST (u8 AS double precision) WITH INOUT AS IMPLICIT;
+CREATE CAST (u8 AS numeric) WITH INOUT AS IMPLICIT;
+CREATE CAST (u8 AS real) WITH INOUT AS IMPLICIT;
 
 
-CREATE TYPE uint2;
+CREATE TYPE u16;
 
-CREATE FUNCTION uint2in(cstring) RETURNS uint2
+CREATE FUNCTION u16in(cstring) RETURNS u16
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint2in';
+    AS '$libdir/uint', 'u16in';
 
-CREATE FUNCTION uint2out(uint2) RETURNS cstring
+CREATE FUNCTION u16out(u16) RETURNS cstring
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint2out';
+    AS '$libdir/uint', 'u16out';
 
-CREATE FUNCTION uint2recv(internal) RETURNS uint2
+CREATE FUNCTION u16recv(internal) RETURNS u16
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint2recv';
+    AS '$libdir/uint', 'u16recv';
 
-CREATE FUNCTION uint2send(uint2) RETURNS bytea
+CREATE FUNCTION u16send(u16) RETURNS bytea
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint2send';
+    AS '$libdir/uint', 'u16send';
 
-CREATE TYPE uint2 (
-    INPUT = uint2in,
-    OUTPUT = uint2out,
-    RECEIVE = uint2recv,
-    SEND = uint2send,
+CREATE TYPE u16 (
+    INPUT = u16in,
+    OUTPUT = u16out,
+    RECEIVE = u16recv,
+    SEND = u16send,
     INTERNALLENGTH = 2,
     PASSEDBYVALUE,
     ALIGNMENT = int2
 );
 
-CREATE CAST (double precision AS uint2) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (numeric AS uint2) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (real AS uint2) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (double precision AS u16) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (numeric AS u16) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (real AS u16) WITH INOUT AS ASSIGNMENT;
 
-CREATE CAST (uint2 AS double precision) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint2 AS numeric) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint2 AS real) WITH INOUT AS IMPLICIT;
+CREATE CAST (u16 AS double precision) WITH INOUT AS IMPLICIT;
+CREATE CAST (u16 AS numeric) WITH INOUT AS IMPLICIT;
+CREATE CAST (u16 AS real) WITH INOUT AS IMPLICIT;
 
 
-CREATE TYPE uint4;
+CREATE TYPE u32;
 
-CREATE FUNCTION uint4in(cstring) RETURNS uint4
+CREATE FUNCTION u32in(cstring) RETURNS u32
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint4in';
+    AS '$libdir/uint', 'u32in';
 
-CREATE FUNCTION uint4out(uint4) RETURNS cstring
+CREATE FUNCTION u32out(u32) RETURNS cstring
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint4out';
+    AS '$libdir/uint', 'u32out';
 
-CREATE FUNCTION uint4recv(internal) RETURNS uint4
+CREATE FUNCTION u32recv(internal) RETURNS u32
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint4recv';
+    AS '$libdir/uint', 'u32recv';
 
-CREATE FUNCTION uint4send(uint4) RETURNS bytea
+CREATE FUNCTION u32send(u32) RETURNS bytea
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint4send';
+    AS '$libdir/uint', 'u32send';
 
-CREATE TYPE uint4 (
-    INPUT = uint4in,
-    OUTPUT = uint4out,
-    RECEIVE = uint4recv,
-    SEND = uint4send,
+CREATE TYPE u32 (
+    INPUT = u32in,
+    OUTPUT = u32out,
+    RECEIVE = u32recv,
+    SEND = u32send,
     INTERNALLENGTH = 4,
     PASSEDBYVALUE,
     ALIGNMENT = int4
 );
 
-CREATE CAST (double precision AS uint4) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (numeric AS uint4) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (real AS uint4) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (double precision AS u32) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (numeric AS u32) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (real AS u32) WITH INOUT AS ASSIGNMENT;
 
-CREATE CAST (uint4 AS double precision) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint4 AS numeric) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint4 AS real) WITH INOUT AS IMPLICIT;
+CREATE CAST (u32 AS double precision) WITH INOUT AS IMPLICIT;
+CREATE CAST (u32 AS numeric) WITH INOUT AS IMPLICIT;
+CREATE CAST (u32 AS real) WITH INOUT AS IMPLICIT;
 
 
-CREATE TYPE uint8;
+CREATE TYPE u64;
 
-CREATE FUNCTION uint8in(cstring) RETURNS uint8
+CREATE FUNCTION bytea_u64(bytea) RETURNS u64 
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint8in';
+    AS '$libdir/uint', 'bytea_u64';
 
-CREATE FUNCTION uint8out(uint8) RETURNS cstring
+CREATE FUNCTION u64in(cstring) RETURNS u64
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint8out';
+    AS '$libdir/uint', 'u64in';
 
-CREATE FUNCTION uint8recv(internal) RETURNS uint8
+CREATE FUNCTION u64out(u64) RETURNS cstring
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint8recv';
+    AS '$libdir/uint', 'u64out';
 
-CREATE FUNCTION uint8send(uint8) RETURNS bytea
+CREATE FUNCTION u64recv(internal) RETURNS u64
     IMMUTABLE
     STRICT
     LANGUAGE C
-    AS '$libdir/uint', 'uint8send';
+    AS '$libdir/uint', 'u64recv';
 
-CREATE TYPE uint8 (
-    INPUT = uint8in,
-    OUTPUT = uint8out,
-    RECEIVE = uint8recv,
-    SEND = uint8send,
+CREATE FUNCTION u64send(u64) RETURNS bytea
+    IMMUTABLE
+    STRICT
+    LANGUAGE C
+    AS '$libdir/uint', 'u64send';
+
+CREATE TYPE u64 (
+    INPUT = u64in,
+    OUTPUT = u64out,
+    RECEIVE = u64recv,
+    SEND = u64send,
     INTERNALLENGTH = 8,
     PASSEDBYVALUE,  -- requires 64-bit
     ALIGNMENT = double
 );
 
-CREATE CAST (double precision AS uint8) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (numeric AS uint8) WITH INOUT AS ASSIGNMENT;
-CREATE CAST (real AS uint8) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (double precision AS u64) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (numeric AS u64) WITH INOUT AS ASSIGNMENT;
+CREATE CAST (real AS u64) WITH INOUT AS ASSIGNMENT;
 
-CREATE CAST (uint8 AS double precision) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint8 AS numeric) WITH INOUT AS IMPLICIT;
-CREATE CAST (uint8 AS real) WITH INOUT AS IMPLICIT;
-
+CREATE CAST (u64 AS double precision) WITH INOUT AS IMPLICIT;
+CREATE CAST (u64 AS numeric) WITH INOUT AS IMPLICIT;
+CREATE CAST (u64 AS real) WITH INOUT AS IMPLICIT;
+CREATE CAST (bytea AS u64) WITH FUNCTION bytea_u64 AS IMPLICIT;
 
 CREATE FUNCTION int1um(int1) RETURNS int1 IMMUTABLE STRICT LANGUAGE C AS '$libdir/uint', 'int1um';
 

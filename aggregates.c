@@ -20,10 +20,10 @@ argtype##_sum(PG_FUNCTION_ARGS) \
 extern int no_such_variable
 
 make_sum_func(int1, INT8, INT32);
-make_sum_func(uint1, UINT8, UINT32);
-make_sum_func(uint2, UINT16, UINT64);
-make_sum_func(uint4, UINT32, UINT64);
-make_sum_func(uint8, UINT64, UINT64);  // FIXME: should use numeric
+make_sum_func(u8, UINT8, UINT32);
+make_sum_func(u16, UINT16, UINT64);
+make_sum_func(u32, UINT32, UINT64);
+make_sum_func(u64, UINT64, UINT64);  // FIXME: should use numeric
 
 
 typedef struct Int8TransTypeData
@@ -57,7 +57,7 @@ argtype##_avg_accum(PG_FUNCTION_ARGS) \
 extern int no_such_variable
 
 make_avg_func(int1, INT8);
-make_avg_func(uint1, UINT8);
-make_avg_func(uint2, UINT16);
-make_avg_func(uint4, UINT32);
-make_avg_func(uint8, UINT64);
+make_avg_func(u8, UINT8);
+make_avg_func(u16, UINT16);
+make_avg_func(u32, UINT32);
+make_avg_func(u64, UINT64);
